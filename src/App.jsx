@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Form from "./components/Form";
 import Message from "./components/Message";
-import { calculateBmi } from "./helpers/bmiHelper";
+import { calculateBmiMet } from "./helpers/bmiHelper";
+import { calculateBmiImp } from "./helpers/bmiHelper";
 
 class App extends Component {
   state = {
@@ -15,7 +16,7 @@ class App extends Component {
 
   onSubmitHandler = e => {
     e.preventDefault();
-    const [bmiValue, bmiMessage] = calculateBmi(
+    const [bmiValue, bmiMessage] = calculateBmiMet(
       this.state.weight,
       this.state.height
     );
