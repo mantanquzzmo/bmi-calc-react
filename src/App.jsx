@@ -17,29 +17,31 @@ class App extends Component {
 
   onSubmitHandler = e => {
     e.preventDefault();
-    if (this.state.method === 'metric') {
-    const [bmiValue, bmiMessage] = calculateBmiMet(
-      this.state.weight,
-      this.state.height
-    );
-    this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
-  } else {
-    const [bmiValue, bmiMessage] = calculateBmiImp(
-      this.state.weight,
-      this.state.height
-    );
-    this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
-  }
-}
+    if (this.state.method === "metric") {
+      const [bmiValue, bmiMessage] = calculateBmiMet(
+        this.state.weight,
+        this.state.height
+      );
+      this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
+    } else {
+      const [bmiValue, bmiMessage] = calculateBmiImp(
+        this.state.weight,
+        this.state.height
+      );
+      this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
+    }
+  };
 
   changeMethod = e => {
     this.setState({
       method: e.target.value
-    })
-  }
+    });
+  };
 
   render() {
     return (
+      <>
+      <h1>BMI Calculator</h1>
       <div>
         <Form
           weight={this.state.weight}
@@ -56,6 +58,7 @@ class App extends Component {
           />
         )}
       </div>
+      </>
     );
   }
 }

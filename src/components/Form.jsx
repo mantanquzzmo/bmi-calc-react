@@ -3,35 +3,38 @@ import React from "react";
 const Form = props => {
   return (
     <form onSubmit={props.onSubmitHandler}>
-      <label htmlFor="weight">Weight</label>
+      <label htmlFor="weight"></label>
       <input
         type="number"
         required
-        placeholder="Weight in kgs"
+        placeholder={props.method === 'metric' ? "Weight in kgs" : "Weight in lbs"}
         value={props.weight}
         name="weight"
         id="weight"
         onChange={props.onChangeHandler}
       />
-      <label htmlFor="height">Height</label>
+      <label htmlFor="height"></label>
       <input
         type="number"
         required
-        placeholder="Height in cm"
+        placeholder={props.method === 'metric' ? "Height in cm" : "Height in inches"}
         value={props.height}
         name="height"
         id="height"
         onChange={props.onChangeHandler}
       />
+      <br/>
       <select
         id="method"
         method={props.method}
         onChange={props.changeMethod}
+        class="select-css"
       >
-        <option value="metric">metric</option>
-        <option value="imperial">imperial</option>
+        <option value="metric">Metric System</option>
+        <option value="imperial">Imperial System</option>
       </select>
-      <button id="calculate">Calculate BMI</button>
+      <br/>
+      <button id="calculate" class="button black">Calculate BMI</button>
     </form>
   );
 };

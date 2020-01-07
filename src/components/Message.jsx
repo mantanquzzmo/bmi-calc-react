@@ -2,9 +2,9 @@ import React from "react";
 
 const Message = props => {
   return (
-    <p id='bmi-message'>
+    <h3 id='bmi-message'>
       You are {props.bmiMessage} with a BMI of {props.bmiValue}
-    </p>
+    </h3>
   );
 };
 
