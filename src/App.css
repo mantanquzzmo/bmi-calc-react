@@ -23,8 +23,8 @@ h1 {
   max-width: 100%; 
   box-sizing: border-box;
   margin: 4%;
-  margin-top: 7%;
-  margin-left: 8%;
+  margin-top: 4%;
+  margin-left: 11%;
   border: 1px solid #aaa;
   box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
   border-radius: .5em;
@@ -67,6 +67,15 @@ h1 {
   margin: 1px 1px;
   cursor: pointer;
   position: relative;
-  margin-left: 17%;
+  margin-left: 22%;
+}
+
+.height {
+  margin-left: 2%;
+  text-align: center
+}
+
+.weight {
+  text-align: center
 }
 
