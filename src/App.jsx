@@ -9,19 +9,34 @@ class App extends Component {
     weight: "",
     height: "",
     bmiValue: "",
-    bmiMessage: ""
+    bmiMessage: "",
+    method: "metric"
   };
 
   onChangeHandler = e => this.setState({ [e.target.name]: e.target.value });
 
   onSubmitHandler = e => {
     e.preventDefault();
+    if (this.state.method === 'metric') {
     const [bmiValue, bmiMessage] = calculateBmiMet(
       this.state.weight,
       this.state.height
     );
     this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
-  };
+  } else {
+    const [bmiValue, bmiMessage] = calculateBmiImp(
+      this.state.weight,
+      this.state.height
+    );
+    this.setState({ bmiValue: bmiValue, bmiMessage: bmiMessage });
+  }
+}
+
+  changeMethod = e => {
+    this.setState({
+      method: e.target.value
+    })
+  }
 
   render() {
     return (
@@ -29,8 +44,10 @@ class App extends Component {
         <Form
           weight={this.state.weight}
           height={this.state.height}
+          method={this.state.method}
           onChangeHandler={this.onChangeHandler}
           onSubmitHandler={this.onSubmitHandler}
+          changeMethod={this.changeMethod}
         />
         {this.state.bmiValue && (
           <Message

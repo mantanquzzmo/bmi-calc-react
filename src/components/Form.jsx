@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Form = props => {
   return (
@@ -23,7 +23,15 @@ const Form = props => {
         id="height"
         onChange={props.onChangeHandler}
       />
-      <button id='calculate'>Calculate BMI</button>
+      <select
+        id="method"
+        method={props.method}
+        onChange={props.changeMethod}
+      >
+        <option value="metric">metric</option>
+        <option value="imperial">imperial</option>
+      </select>
+      <button id="calculate">Calculate BMI</button>
     </form>
   );
 };
