@@ -1,5 +1,3 @@
-// src/__tests__/Form.spec.js
-
 import React from "react";
 import { shallow } from "enzyme";
 
